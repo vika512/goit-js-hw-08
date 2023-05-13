@@ -17,7 +17,7 @@ const imagesListItems = galleryItems.map(item =>
 
 imagesList.innerHTML = imagesListItems;
 
-var lightbox = new SimpleLightbox('.gallery li a', { 
+const lightbox = new SimpleLightbox('.gallery li a', { 
     captionsData: "alt",
     captionPosition: "bottom",
     captionDelay: 250,
