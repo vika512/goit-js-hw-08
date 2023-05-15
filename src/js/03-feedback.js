@@ -11,10 +11,12 @@ const LOCALSTORAGE_KEY = "feedback-form-state";
 refs.form.addEventListener('input', throttle (onTextInput, 1000));
 refs.form.addEventListener('submit', onSubmit);
 
-const userData = {};
+const userData = {
+    email: '',
+    message: '',
+};
 
 function onTextInput(evt) {
-    console.log(evt.target.value)
     userData[evt.target.name] = evt.target.value;
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(userData));
 };
@@ -41,6 +43,7 @@ function onPageReload() {
         refs.email.value = savedInfo.email;
         refs.message.value = savedInfo.message;
     }
+    
     else {
         refs.email.value = '';
         refs.message.value = '';
